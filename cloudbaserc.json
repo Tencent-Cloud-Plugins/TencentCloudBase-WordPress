@@ -37,7 +37,9 @@
             "WORDPRESS_BLOG_NAME": "User's Blog!",
             "WORDPRESS_SKIP_INSTALL": "no",
             "WORDPRESS_TABLE_PREFIX": "wp_",
-            "WORDPRESS_SCHEME": "http"
+            "WORDPRESS_SCHEME": "http",
+            "WP_USERNAME": "系统管理员账号",
+            "WP_PASSWORD": "系统管理员密码"
           },
           "volumeMounts": {
             "/bitnami/wordpress": "wordpress-cfs"
