@@ -1,0 +1,79 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "WordPress",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "wordpress",
+          "servicePath": "/",
+          "uploadType": "image",
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/tcb-wordpress/wordpress:5.5.1"
+          },
+          "containerPort": 8080,
+          "customLogs": "stdout,/dev/stdout,/dev/stderr",
+          "envVariables": {
+            "ALLOW_EMPTY_PASSWORD": "no",
+            "MARIADB_HOST": "{{env.DB_IP}}",
+            "MARIADB_PORT_NUMBER": "{{env.DB_PORT}}",
+            "MARIADB_ROOT_USER": "root",
+            "MARIADB_ROOT_PASSWORD": "{{env.MYSQL_PASSWORD}}",
+            "MYSQL_CLIENT_CREATE_DATABASE_NAME": "tcb-wordpress",
+            "MYSQL_CLIENT_CREATE_DATABASE_USER": "tcb-wordpress",
+            "MYSQL_CLIENT_CREATE_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
+            "WORDPRESS_DATABASE_NAME": "tcb-wordpress",
+            "WORDPRESS_DATABASE_USER": "tcb-wordpress",
+            "WORDPRESS_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
+            "WORDPRESS_USERNAME": "tcb-wordpress",
+            "WORDPRESS_PASSWORD": "{{env.WP_PASSWORD}}",
+            "WORDPRESS_EMAIL": "user@example.com",
+            "WORDPRESS_FIRST_NAME": "FirstName",
+            "WORDPRESS_LAST_NAME": "LastName",
+            "WORDPRESS_HTACCESS_OVERRIDE_NONE": "no",
+            "WORDPRESS_HTACCESS_PERSISTENCE_ENABLED": "no",
+            "WORDPRESS_BLOG_NAME": "User's Blog!",
+            "WORDPRESS_SKIP_INSTALL": "no",
+            "WORDPRESS_TABLE_PREFIX": "wp_",
+            "WORDPRESS_SCHEME": "http"
+          },
+          "volumeMounts": {
+            "/bitnami/wordpress": "wordpress-cfs"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "wordpress-cfs"
+        },
+        {
+          "type": "CynosDB",
+          "name": "wordpress",
+          "envMap": {
+            "IP": "DB_IP",
+            "PORT": "DB_PORT",
+            "USERNAME": "MYSQL_USERNAME",
+            "PASSWORD": "MYSQL_PASSWORD"
+          }
+        }
+      ],
+      "environment": {
+        "JOOMLA_USERNAME": {
+          "description": "后台管理系统管理员账号",
+          "required": true,
+          "default": "admin"
+        },
+        "JOOMLA_PASSWORD": {
+          "description": "后台管理系统管理员密码",
+          "required": true,
+          "default": "admin"
+        }
+      }
+    }
+  }
+}
