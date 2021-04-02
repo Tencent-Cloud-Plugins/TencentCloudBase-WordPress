@@ -63,12 +63,12 @@
         }
       ],
       "environment": {
-        "WORDPRESS_USERNAME": {
+        "WP_USERNAME": {
           "description": "后台管理系统管理员账号",
           "required": true,
           "default": "admin"
         },
-        "WORDPRESS_PASSWORD": {
+        "WP_PASSWORD": {
           "description": "后台管理系统管理员密码",
           "required": true,
           "default": "admin"
