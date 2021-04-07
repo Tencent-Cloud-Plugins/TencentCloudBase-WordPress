@@ -13,7 +13,7 @@
           "imageInfo": {
             "imageUrl": "ccr.ccs.tencentyun.com/tcb-wordpress/wordpress-tcb:5.5.1"
           },
-          "containerPort": 8080,
+          "containerPort": 80,
           "customLogs": "stdout,/dev/stdout,/dev/stderr",
           "envVariables": {
             "ALLOW_EMPTY_PASSWORD": "no",
