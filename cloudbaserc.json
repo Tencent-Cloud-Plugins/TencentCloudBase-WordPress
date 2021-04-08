@@ -8,6 +8,8 @@
         "use": "@cloudbase/framework-plugin-container",
         "inputs": {
           "serviceName": "wordpress",
+          "cpu": 0.5,
+          "mem": 1,
           "servicePath": "/",
           "uploadType": "image",
           "imageInfo": {
