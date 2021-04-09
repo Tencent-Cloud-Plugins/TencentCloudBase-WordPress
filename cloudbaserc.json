@@ -66,14 +66,14 @@
       ],
       "environment": {
         "WORDPRESS_USERNAME": {
-          "description": "后台管理系统管理员账号",
+          "description": "管理控制台账号",
           "required": true,
           "default": "admin"
         },
         "WORDPRESS_PASSWORD": {
-          "description": "后台管理系统管理员密码",
+          "description": "初始管理控制台密码",
           "required": true,
-          "default": "admin"
+          "default": "wordpress@123"
         }
       }
     }
