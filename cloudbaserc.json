@@ -9,7 +9,7 @@
         "inputs": {
           "serviceName": "wordpress",
           "cpu": 2,
-          "mem": 1,
+          "mem": 4,
           "servicePath": "/",
           "uploadType": "image",
           "imageInfo": {
