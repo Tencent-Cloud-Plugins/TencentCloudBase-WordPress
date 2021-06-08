@@ -39,8 +39,10 @@
             "WORDPRESS_BLOG_NAME": "User's Blog!",
             "WORDPRESS_SKIP_INSTALL": "no",
             "WORDPRESS_TABLE_PREFIX": "wp_",
-            "WORDPRESS_SCHEME": "http"
+            "WORDPRESS_SCHEME": "http",
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.wordpress.Properties.InstanceId}"
           },
+          "initialDelaySeconds": 10,
           "volumeMounts": {
             "/bitnami/wordpress": "wordpress-cfs"
           }
